@@ -1,0 +1,73 @@
+{
+  "name": "rider",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fontsource/inter": "^5.0.5",
+    "@tailwindcss/typography": "^0.5.9",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.39",
+    "@types/react": "^18.2.17",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-router-dom": "^5.3.3",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-loading-icons": "^1.1.0",
+    "react-router-dom": "^6.14.2",
+    "react-scripts": "^5.0.1",
+    "run-p": "^0.0.0",
+    "tailwind-safelist-generator": "^1.0.0",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "set DISABLE_ESLINT_PLUGIN=true && run-p watch:css react-scripts:start",
+    "build": "run-s build:css react-scripts:build",
+    "react-scripts:start": "react-scripts start",
+    "react-scripts:build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:css": "cross-env TAILWIND_MODE=build NODE_ENV=production postcss src/styles/app.css -o src/index.css",
+    "watch:css": "cross-env TAILWIND_MODE=watch NODE_ENV=development postcss src/styles/app.css -o src/index.css --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.1",
+    "prettier": "^3.0.0",
+    "tailwindcss": "^3.3.3"
+  }
+}
